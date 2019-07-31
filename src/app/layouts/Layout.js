@@ -15,7 +15,10 @@ export default class Layout extends React.Component {
                                 <Link to="/about">About</Link>
                             </li>
                             <li>
-                                <Link to="/contacts">contacts</Link>
+                                <Link to="/contacts">Contacts</Link>
+                            </li>
+                            <li>
+                                <Link to="/contacts/5">Contacts/5</Link>
                             </li>
                             <li>
                                 <Link to="/notExistingPage">Not found</Link>

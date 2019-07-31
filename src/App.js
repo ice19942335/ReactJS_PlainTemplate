@@ -22,6 +22,7 @@ class App extends React.Component {
                     <IndexRoute component={Main} />
                     <Route path="about" component={About}/>
                     <Route path="contacts" component={Contacts}/>
+                    <Route path="contacts/:number" component={Contacts}/>
                     <Route path="*" component={PageNotFound}/>
                 </Route>
             </Router>
