@@ -6,8 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app/styles/style.css';
 
 import Layout from './app/layouts/Layout.js';
+
+//Pages
 import Main from './app/pages/Main.js';
+import Users from './app/pages/Users';
 import PageNotFound from './app/pages/PageNotFound.js';
+
 
 
 class App extends React.Component {
@@ -17,7 +21,7 @@ class App extends React.Component {
             <Router history={browserHistory}>
                 <Route path="/" component={Layout}>
                     <IndexRoute component={Main} />
-
+                    <Route path="/users" component={Users}/>
                     <Route path="*" component={PageNotFound}/>
                 </Route>
             </Router>
