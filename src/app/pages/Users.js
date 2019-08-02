@@ -4,7 +4,11 @@ import UsersList from '../components/UsersList';
 class Users extends Component {
     render() {
         return (
-            <UsersList />
+           <div>
+               {
+                   (!this.props.children) ? <UsersList /> : this.props.children
+               }
+           </div>
         );
     }
 }

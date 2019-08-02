@@ -12,7 +12,7 @@ class UsersList extends Component {
     }
 
     render() {
-        if (this.state.users){
+        if (!this.state.users){
             return null;
         }
 
