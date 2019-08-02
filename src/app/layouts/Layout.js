@@ -1,35 +1,40 @@
 import React from 'react';
-import {Link} from 'react-router';
+import Menu from '../components/Menu';
+import MenuItem from '../components/MenuItem';
 
 export default class Layout extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.brand = 'React blog!';
+    }
+
+    isActive(href) {
+        return window.location.pathname === href;
+    }
+
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-4">
-                        <ul>
-                            <li>
-                                <Link to="/">Main</Link>
-                            </li>
-                            <li>
-                                <Link to="/about">About</Link>
-                            </li>
-                            <li>
-                                <Link to="/contacts">Contacts</Link>
-                            </li>
-                            <li>
-                                <Link to="/contacts/5">Contacts/5</Link>
-                            </li>
-                            <li>
-                                <Link to="/notExistingPage">Not found</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="col-8">
-                        {this.props.children}
+            <>
+                <Menu brand={this.brand}>
+                    <MenuItem href="/" active={this.isActive('/')}>
+                        Main
+                    </MenuItem>
+                    <MenuItem href="/users" active={this.isActive('/users')}>
+                        Users
+                    </MenuItem>
+                </Menu>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            {this.props.children}
+                        </div>
                     </div>
                 </div>
-            </div>
+                <footer className="card-footer">
+                    &copy; 2019
+                </footer>
+            </>
         );
     }
 }
