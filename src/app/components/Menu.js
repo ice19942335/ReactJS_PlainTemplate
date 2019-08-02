@@ -1,11 +1,21 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 class Menu extends Component {
     render() {
         return (
-            <div>
-
-            </div>
+            <nav className="navbar navbar-expand-lg navbar-light navbar-light">
+                <div className="container">
+                    <Link to="/" className="navbar-brand">
+                        {this.props.brand}
+                    </Link>
+                    <div className="navbar-collapse">
+                        <ul className="navbar-nav">
+                            {this.props.children}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         );
     }
 }
